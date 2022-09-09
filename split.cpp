@@ -12,15 +12,21 @@ the function below should be the only one in this file.
 
 #include "split.h"
 
-/* Add a prototype for a helper function here if you need */
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
-  /* Add code here */
-// WRITE YOUR CODE HERE
 
+  if(in==nullptr) return ; //if the input is just a null ptr dont do anything
+  else{
+    split(in->next, odds, evens); //recursive call
+    if(in->value%2==0){ //if its even
+      in->next = evens; 
+      evens=in;
+    }
+    if(in->value%2==1){ //if its odd
+      in->next = odds; 
+      odds=in;
+    }
+    in = nullptr;
+  }
 }
-
-/* If you needed a helper function, write it here */
-
-// WRITE YOUR CODE HERE
