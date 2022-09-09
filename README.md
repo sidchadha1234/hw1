@@ -1,6 +1,6 @@
 To run the function simply compile it through typing in the following commands:
 cd hw1
-g++ -g -ulliststr.cpp ulliststr_test.cpp -o test
+g++ -g -Wall ulliststr.cpp ulliststr_test.cpp -o ulliststr_test
 ./test
 
 To test that there are no memory links, you can run valgrind as well:
